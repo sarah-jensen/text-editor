@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "webpack-dev-server",
-    "start": "webpack && webpack serve",
-    "server": "",
-    "build": "webpack",
-    "install": "",
-    "client": ""
+    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "npm start --prefix client"
   },
   "keywords": [],
   "author": "",
