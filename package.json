@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
-    "start": "",
+    "start:dev": "webpack-dev-server",
+    "start": "webpack && webpack serve",
     "server": "",
-    "build": "",
+    "build": "webpack",
     "install": "",
     "client": ""
   },
@@ -16,7 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "html-webpack-plugin": "^5.5.3",
+    "if-env": "^1.0.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
