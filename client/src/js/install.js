@@ -8,7 +8,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
     butInstall.style.visibility = 'visible';
     
     // TODO: Implement a click event handler on the `butInstall` element
-    butInstall.addEventListener('click', async () => {
+    butInstall.addEventListener('click', () => {
         event.prompt();
         butInstall.setAttribute('disabled', true);
         butInstall.textContent = 'Installed!';

@@ -1,0 +1,34 @@
+{
+    "short_name": "JATE",
+    "name": "Just Another Text Editor",
+    "icons": [
+        {
+            "src": "./src/images/logo.png",
+            "type": "image/png",
+            "sizes": "96x96",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./src/images/logo.png",
+            "type": "image/png",
+            "sizes": "128x128",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./src/images/logo.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./src/images/logo.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./",
+    "description": "Just another text editor"
+}
