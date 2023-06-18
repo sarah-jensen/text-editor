@@ -6,10 +6,10 @@
   "scripts": {
     "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server server.js --ignore client",
+    "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
-    "client": "npm start --prefix client"
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
+    "css-loader": "^6.8.1",
     "nodemon": "^2.0.4"
   }
 }
