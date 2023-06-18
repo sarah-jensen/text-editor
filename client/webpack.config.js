@@ -14,16 +14,51 @@ module.exports = () => {
       install: './src/js/install.js'
     },
     output: {
-      filename: '[name].bundle.js',
+      filename: 'jate.bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      // Webpack plugin
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'JATE'
+      }),
+
+      // custom Service Worker
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+
+      new WebpackPwaManifest({
+
+      }),
       
     ],
 
     module: {
       rules: [
-        
+        {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+        },
+        {
+          test: /\.(?:js|mjs|cjs)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: 
+              [
+                '@babel/preset-env'
+              ],
+              plugins: 
+              [
+                '@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'
+              ],
+            }
+          }
+        }
       ],
     },
   };
