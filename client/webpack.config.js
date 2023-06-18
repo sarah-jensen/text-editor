@@ -31,7 +31,18 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
-
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'It\'s better than talking to yourself',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 512],
+            destination: path.join('src', 'icons'),
+          },
+        ],
       }),
       
     ],
