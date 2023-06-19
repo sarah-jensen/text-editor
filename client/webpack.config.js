@@ -14,7 +14,7 @@ module.exports = () => {
       install: './src/js/install.js'
     },
     output: {
-      filename: 'jate.bundle.js',
+      filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
@@ -31,16 +31,20 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'Just Another Text Editor',
         short_name: 'JATE',
         description: 'It\'s better than talking to yourself',
         start_url: './',
         publicPath: './',
+        theme_color: '#225ca3',
+        background_color: '#225ca3',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 512],
-            destination: path.join('src', 'icons'),
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),
