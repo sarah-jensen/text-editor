@@ -27,7 +27,7 @@ export const putDb = async (content) => {
   //pass in new content
   const request = store.put(
     {
-      text: content,
+      content,
     });
     
     // confirm request
