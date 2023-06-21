@@ -12,7 +12,7 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// Add content to database
 export const putDb = async (content) => {
   
   //connect to correct version of the database
@@ -27,7 +27,7 @@ export const putDb = async (content) => {
   //pass in new content
   const request = store.put(
     {
-      content,
+      content: content,
     });
     
     // confirm request
@@ -37,7 +37,7 @@ export const putDb = async (content) => {
   };
 
 
-// TODO: Add logic for a method that gets all the content from the database
+// Gets all the content from the database
 export const getDb = async () => {
   
   //connect to database and version
@@ -55,7 +55,7 @@ export const getDb = async () => {
   //confirm request
   const result = await request;
   console.log('result.value', result);
-  return result;
+  return result[result.length - 1].content;
 };
 
 // call the initialize database function
