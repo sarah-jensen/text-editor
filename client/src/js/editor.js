@@ -11,7 +11,7 @@ export default class {
       throw new Error('CodeMirror is not loaded');
     }
 
-    this.editor = CodeMirror(document.getElementById('main'), {
+    this.editor = CodeMirror(document.querySelector('#main'), {
       value: '',
       mode: 'javascript',
       theme: 'monokai',
